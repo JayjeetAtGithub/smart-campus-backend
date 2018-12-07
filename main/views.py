@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -30,4 +31,11 @@ def get_user(request, username, format=None):
     user = User.objects.get(username=username)
     serializer = UserSerializer(user)
     return Response(serializer.data, status=status.HTTP_200_OK)
+=======
+from django.shortcuts import render
+from django.contrib.auth import get_user_model
+
+#Django sucks here, Need to import the custom User model explicitly, default is auth.User
+User = get_user_model()
+>>>>>>> f1590b6c9684816d6f5d26fe5e5e46f042504245
 
